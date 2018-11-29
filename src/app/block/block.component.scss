@@ -1,0 +1,40 @@
+.block {
+  position: relative;
+  width: 200px;
+  .ball {
+    background-color: powderblue;
+    border-radius: 30px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 75px;
+    color: white;
+    line-height: 50px;
+    text-align: center;
+    &.received {
+      animation: flow 3s ease 0s;
+    }
+  }
+  .line {
+    width: 5px;
+    background-color: powderblue;
+    height: 400px;
+    margin: auto;
+  }
+  .cam {
+    width: 100px;
+    height: 100px;
+    background-color: goldenrod;
+    margin: auto;
+    color: white;
+  }
+}
+
+@keyframes flow {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(350px);
+  }
+}
