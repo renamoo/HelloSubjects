@@ -28,6 +28,7 @@ export class BlockComponent implements OnInit {
       this.isReceived = true;
       setTimeout(() => {
         this.isReceived = false;
+        this.currentVal = `${Number(val) + 1}`;
       }, 3000);
     });
   }
