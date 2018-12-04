@@ -1,33 +1,36 @@
 .main-page {
-    .title {
-        margin: auto;
-        width: 270px;
-        text-align: center;
-        h1 {
-            font-family: Lato;
-            color: palevioletred;
-        }
+  .title {
+    margin: auto;
+    width: 270px;
+    text-align: center;
+    h1 {
+      font-family: Lato;
+      color: palevioletred;
     }
-    .button {
-        margin: auto;
-        color: brown;
-        background-color: pink;
-        width: 100px;
-        cursor: pointer;
-        padding: 5px;
-        .inner-btn {
-            border: 1px dashed white;
-            padding: 3px;
-            text-align: center;
-        }
-        &:hover {
-            background-color: rgb(223, 176, 183);
-        }
+  }
+  .button {
+    margin: auto;
+    color: brown;
+    background-color: pink;
+    width: 100px;
+    cursor: pointer;
+    padding: 5px;
+    .inner-btn {
+      border: 1px dashed white;
+      padding: 3px;
+      text-align: center;
     }
-    .blocks {
-        display: flex;
-        flex-flow: row;
-        margin: auto;
-        width: 800px;
+    &:hover {
+      background-color: rgb(223, 176, 183);
     }
+  }
+  .blocks {
+    display: flex;
+    flex-flow: row;
+    margin: auto;
+    width: 800px;
+  }
+  .complete {
+    cursor: pointer;
+  }
 }
