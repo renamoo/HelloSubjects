@@ -55,4 +55,10 @@ export class AppComponent implements OnInit {
     });
     this.value++;
   }
+
+  onCompleted() {
+    this.subNames.forEach(name => {
+      this.subs.get(name).complete();
+    });
+  }
 }

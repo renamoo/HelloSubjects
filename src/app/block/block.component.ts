@@ -23,13 +23,21 @@ export class BlockComponent implements OnInit {
   }
 
   subscribe() {
-    this.sub.subscribe(val => {
-      this.currentVal = val;
-      this.isReceived = true;
-      setTimeout(() => {
-        this.isReceived = false;
-        this.currentVal = `${Number(val) + 1}`;
-      }, 3000);
-    });
+    this.sub.subscribe(
+      val => {
+        this.currentVal = val;
+        this.isReceived = true;
+        setTimeout(() => {
+          this.isReceived = false;
+          this.currentVal = `${Number(val) + 1}`;
+        }, 3000);
+      },
+      error => {
+        console.log(error);
+      },
+      () => {
+        console.log('completed');
+      }
+    );
   }
 }
