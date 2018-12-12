@@ -1,14 +1,26 @@
 <div class="main-page">
-  <div class="title"><h1>Hello, Subjects!</h1></div>
-  <div class="button" (click)="onNext()">
-    <div class="inner-btn">NEXT()</div>
-  </div>
-  <div class="blocks">
-    <app-block
-      *ngFor="let name of subNames"
-      [sub]="subs.get(name)"
-      [name]="name"
-    ></app-block>
-    <div class="toBeReplaced complete" (click)="onCompleted()">COMPLETE</div>
+  <app-header></app-header>
+  <div class="content">
+    <div class="side">
+      <div class="button" (click)="onNext()">
+        <div class="inner-btn">NEXT()</div>
+      </div>
+      <div class="toBeReplaced complete" (click)="onCompleted()">COMPLETE</div>
+    </div>
+    <div class="stage">
+      <div class="blocks">
+        <app-block
+          *ngFor="let name of subNames"
+          [sub]="subs.get(name)"
+          [name]="name"
+        ></app-block>
+      </div>
+    </div>
+    <div class="side">
+      <div class="button" (click)="onNext()">
+        <div class="inner-btn">NEXT()</div>
+      </div>
+      <div class="toBeReplaced complete" (click)="onCompleted()">COMPLETE</div>
+    </div>
   </div>
 </div>

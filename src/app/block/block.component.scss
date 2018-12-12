@@ -11,14 +11,12 @@
     color: white;
     line-height: 50px;
     text-align: center;
-    &.received {
-      animation: flow 3s ease 0s;
-    }
+    animation: flow 3s ease 0s;
   }
   .line {
     width: 5px;
     background-color: powderblue;
-    height: 400px;
+    height: 350px;
     margin: auto;
   }
   .cam {
@@ -35,6 +33,6 @@
     transform: translateY(0px);
   }
   100% {
-    transform: translateY(350px);
+    transform: translateY(300px);
   }
 }
