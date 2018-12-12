@@ -1,34 +1,43 @@
+@import '~compass-mixins/lib/compass/css3';
+
 .main-page {
-  .title {
-    margin: auto;
-    width: 270px;
-    text-align: center;
-    h1 {
-      font-family: Lato;
-      color: palevioletred;
+  background-color: rgb(255, 211, 218);
+  .content {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+  }
+  .stage {
+    width: 800px;
+    margin-top: 30px;
+    background-color: rgb(216, 239, 241);
+    @include border-radius(20px 20px 0 0);
+    .blocks {
+      display: flex;
+      flex-flow: row;
+      margin: auto;
+      width: 800px;
     }
   }
+  .side {
+    flex-grow: 1;
+    padding-top: 30px;
+    box-sizing: border-box;
+  }
   .button {
-    margin: auto;
     color: brown;
-    background-color: pink;
+    background-color: white;
     width: 100px;
     cursor: pointer;
     padding: 5px;
     .inner-btn {
-      border: 1px dashed white;
+      border: 1px dashed pink;
       padding: 3px;
       text-align: center;
     }
     &:hover {
       background-color: rgb(223, 176, 183);
     }
-  }
-  .blocks {
-    display: flex;
-    flex-flow: row;
-    margin: auto;
-    width: 800px;
   }
   .complete {
     cursor: pointer;
