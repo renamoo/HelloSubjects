@@ -29,10 +29,12 @@ export class AppComponent implements OnInit {
   ];
   value: number = 1;
   buffer: number = 3;
+  logs: string[] = [];
 
   ngOnInit() {
     this.subNames.forEach(sub => {
       this.subs.set(sub, this.getSubject(sub));
+      this.logs.push(`new ${sub}()`);
     });
   }
 
