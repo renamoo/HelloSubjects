@@ -5,7 +5,9 @@
       <div class="button" (click)="onNext()">
         <div class="inner-btn">NEXT()</div>
       </div>
-      <div class="toBeReplaced complete" (click)="onCompleted()">COMPLETE</div>
+      <div class="log">
+        <p *ngFor="let log of logs">{{ log }}</p>
+      </div>
     </div>
     <div class="stage">
       <div class="blocks">
@@ -18,9 +20,11 @@
     </div>
     <div class="side">
       <div class="button" (click)="onNext()">
-        <div class="inner-btn">NEXT()</div>
+        <div class="inner-btn">next()</div>
       </div>
-      <div class="toBeReplaced complete" (click)="onCompleted()">COMPLETE</div>
+      <div class="button" (click)="onCompleted()">
+        <div class="inner-btn">complete()</div>
+      </div>
     </div>
   </div>
 </div>
