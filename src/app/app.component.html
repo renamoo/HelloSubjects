@@ -2,20 +2,13 @@
   <app-header></app-header>
   <div class="content">
     <div class="side">
-      <div class="button" (click)="onNext()">
-        <div class="inner-btn">NEXT()</div>
-      </div>
       <div class="log">
         <p *ngFor="let log of logs">{{ log }}</p>
       </div>
     </div>
     <div class="stage">
       <div class="blocks">
-        <app-block
-          *ngFor="let name of subNames"
-          [sub]="subs.get(name)"
-          [name]="name"
-        ></app-block>
+        <app-block *ngFor="let name of subNames" [sub]="subs.get(name)" [name]="name"></app-block>
       </div>
     </div>
     <div class="side">

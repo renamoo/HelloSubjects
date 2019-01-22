@@ -1,0 +1,4 @@
+<div class="switch">
+  <input id="toggle" [(ngModel)]="status.isSubscribing" (ngModelChange)="onChange()" class="toggle-input" type='checkbox'>
+  <label for="toggle" class="toggle-label">{{ status.label | uppercase}}</label>
+</div>

@@ -1,5 +1,10 @@
 <div class="block">
   <div class="line"></div>
   <app-chamaelon length="200"></app-chamaelon>
-  {{ name }}
+  <div class="stand">
+    {{name}}
+  </div>
+  <div class="status">
+    <app-switch [(status)]="status" (statusChange)="onStatusChange()"></app-switch>
+  </div>
 </div>

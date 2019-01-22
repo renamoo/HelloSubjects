@@ -53,7 +53,8 @@ export class AppComponent implements OnInit {
 
   onNext() {
     this.subNames.forEach(name => {
-      this.subs.get(name).next(`${this.value}`);
+      const sub = this.subs.get(name);
+      sub.observers ? this.subs.get(name).next(`${this.value}`) : console.log('naiyo');
     });
     this.value++;
   }

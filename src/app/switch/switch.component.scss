@@ -1,0 +1,59 @@
+@import './../../variables.scss';
+
+div {
+  margin: auto;
+  height:$block-status-height;
+}
+
+.switch {
+  $switch-height:25px;
+  $switch-width: 140px;
+  position: relative;
+  width: $switch-width;
+  height: $switch-height;
+  margin: 5px auto;
+  .toggle-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .toggle-input:checked + .toggle-label{
+    background-color: $log-dark-pink;
+    color:white;
+    padding:0 $switch-height 0 15px;
+    &:after{
+      left: $switch-width - $switch-height;
+    }
+  }
+  .toggle-label {
+    width: $switch-width;
+    height: $switch-height;
+    line-height:$switch-height;
+    background: #cfd0cf;
+    color: darken(#cfd0cf, 30%);
+    position: relative;
+    display: inline-block;
+    border-radius: 46px;
+    transition: 0.4s;
+    box-sizing: border-box;
+    padding:0 0 0 $switch-height;
+    &:after {
+      content: '';
+      position: absolute;
+      width: $switch-height;
+      height: $switch-height;
+      border-radius: 100%;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      background: #fff;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      transition: 0.4s;
+    }
+  }
+}

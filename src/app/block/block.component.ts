@@ -1,12 +1,11 @@
-import { Component, Input, OnInit, ElementRef } from '@angular/core';
-import { AsyncSubject, BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
-import { Renderer2 } from '@angular/core';
+import { Component, ElementRef, Input, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { AsyncSubject, BehaviorSubject, ReplaySubject, Subject, Subscription } from 'rxjs';
 @Component({
   selector: 'app-block',
   templateUrl: './block.component.html',
   styleUrls: ['./block.component.scss']
 })
-export class BlockComponent implements OnInit {
+export class BlockComponent implements OnInit, OnDestroy {
   @Input() sub:
     | Subject<string>
     | BehaviorSubject<string>
@@ -14,15 +13,22 @@ export class BlockComponent implements OnInit {
     | AsyncSubject<string>;
   @Input() name: string;
   currentVal: string;
+  status: { isSubscribing: boolean, label: 'subscribing' | 'unsubscribed' };
+  subs: Subscription[] = [];
 
-  constructor(private el: ElementRef, private render: Renderer2) {}
+  constructor(private el: ElementRef, private render: Renderer2) { }
 
   ngOnInit() {
     this.subscribe();
+    this.status = { isSubscribing: true, label: 'subscribing' };
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach(sub => sub.unsubscribe());
   }
 
   subscribe() {
-    this.sub.subscribe(
+    this.subs.push(this.sub.subscribe(
       val => {
         this.currentVal = val;
         const ball = this.render.createElement('div');
@@ -44,7 +50,19 @@ export class BlockComponent implements OnInit {
       },
       () => {
         console.log('completed');
+        this.status = { isSubscribing: false, label: 'unsubscribed' };
       }
-    );
+    ));
+  }
+
+  onStatusChange() {
+    switch (this.status.isSubscribing) {
+      case true:
+        this.subscribe();
+        break;
+      case false:
+        this.sub.unsubscribe();
+        break;
+    }
   }
 }
