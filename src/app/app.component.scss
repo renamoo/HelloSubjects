@@ -14,7 +14,7 @@
     width: $stage-width;
     margin-top: $content-top-margin;
     background-color: $stage-yellow;
-    height: calc(100vh - $header-parts-height - $content-top-margin);
+    height: $stage-height;
     @include border-radius(20px 20px 0 0);
     .blocks {
       display: flex;
@@ -54,7 +54,7 @@
     margin-top: 20px;
     margin: auto;
     overflow-y: scroll;
-    background-color: rosybrown;
+    background-color: $log-dark-pink;
     color: white;
     @include border-radius(5px);
     p {

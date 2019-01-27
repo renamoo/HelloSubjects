@@ -1,5 +1,6 @@
 // color
 $back-pink: rgb(255, 211, 218);
+$log-dark-pink: rosybrown;
 $stage-yellow: rgb(253, 250, 224);
 $text-color-pink: palevioletred;
 $button-stech: rgb(255, 163, 178);
@@ -13,6 +14,10 @@ $header-parts-height: 18vh;
 // content
 $content-top-margin: 30px;
 $stage-width: 800px;
+$stage-height: calc(100vh - #{$header-parts-height} - #{$content-top-margin});
 $button-width: 150px;
 $block-width: 200px;
+$figure-height: 250px;
+$block-status-height: 40px;
+$block-stand-height:35px;
 
