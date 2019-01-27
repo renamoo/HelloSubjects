@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.subNames.forEach(sub => {
       this.subs.set(sub, this.getSubject(sub));
-      this.logs.push(`new ${sub}()`);
+      this.logs.push(sub === 'ReplaySubject' ? `new ${sub}()` : `new ${sub}(1)`);
     });
   }
 
