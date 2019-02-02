@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   width: 100vw;
+  min-width:1300px;
   top: 0px;
   text-align: center;
   h1 {
@@ -25,6 +26,7 @@
     border-bottom-left-radius: 90px;
     background-color: $accent-blue;
     width: calc(100vw / 15);
+    min-width:calc(1300px / 15);
     height: $header-parts-height;
     flex-grow: 0;
     flex-shrink: 0;

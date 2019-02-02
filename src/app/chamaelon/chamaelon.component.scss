@@ -1,0 +1,21 @@
+.mouse{
+  width:200px;
+  height:200px;
+  position:relative;
+  >i{
+    position:absolute;
+    left:45px;
+    top: 120px;
+    font-size: 25px;
+    color: rgba(255,255,255,0.9);
+    cursor:pointer;
+  }
+  .total{
+    position:absolute;
+    color:white;
+    top: 100px;
+    left: 145px;
+    width: 30px;
+    text-align: center;
+  }
+}

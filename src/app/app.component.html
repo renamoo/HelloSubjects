@@ -2,21 +2,27 @@
   <app-header></app-header>
   <div class="content">
     <div class="side">
-      <div class="log">
-        <p *ngFor="let log of logs">{{ log }}</p>
+      <div class="tab">
+        <div class="tag" *ngFor="let name of subNames" (click)="onSelect(name)" [class.selected]="name === selected">
+          {{ name === 'Subject' ? 'S' : name === 'BehaviorSubject' ? 'B' : name === 'ReplaySubject' ? 'R' : 'A' }}
+        </div>
       </div>
+      <app-log [logs]="logs.get(selected)"></app-log>
     </div>
     <div class="stage">
       <div class="blocks">
-        <app-block *ngFor="let name of subNames" [sub]="subs.get(name)" [name]="name"></app-block>
+        <app-block *ngFor="let name of subNames" [sub]="subs.get(name)" [name]="name" (operation)="onOperation($event)"></app-block>
       </div>
     </div>
     <div class="side">
       <div class="button" (click)="onNext()">
-        <div class="inner-btn">next()</div>
+        <div class="inner-btn">next({{value}})</div>
       </div>
       <div class="button" (click)="onCompleted()">
         <div class="inner-btn">complete()</div>
+      </div>
+      <div class="button" (click)="onReload()">
+        <div class="inner-btn">Reload <i class="fa fa-refresh" aria-hidden="true"></i></div>
       </div>
     </div>
   </div>

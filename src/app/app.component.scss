@@ -5,6 +5,7 @@
   background-color: $back-pink;
   width: 100vw;
   height: 100vh;
+  overflow-y:hidden;
   .content {
     display: flex;
     flex-direction: row;
@@ -27,6 +28,24 @@
     flex-grow: 1;
     padding-top: $content-top-margin;
     box-sizing: border-box;
+    min-width:250px;
+    .tab{
+      margin:auto;
+      width: calc(80%);
+      display:flex;
+      flex-direction:row;
+      .tag{
+        width: calc(100% / 4);
+        text-align:center;
+        cursor:pointer;
+        background:linear-gradient(180deg,white 90%, $button-stech 10%);
+        color:$log-dark-pink;
+        &.selected {
+          background:$button-stech;
+          color:white;
+        }
+      }
+    }
   }
   .button {
     color: $text-color-pink;
@@ -46,20 +65,6 @@
     &:hover {
       background-color: $button-hovered;
       color: white;
-    }
-  }
-  .log {
-    width: calc(80%);
-    height: 200px;
-    margin-top: 20px;
-    margin: auto;
-    overflow-y: scroll;
-    background-color: $log-dark-pink;
-    color: white;
-    @include border-radius(5px);
-    p {
-      line-height: 20px;
-      margin: 5px;
     }
   }
 }
