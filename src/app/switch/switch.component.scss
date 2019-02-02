@@ -23,7 +23,7 @@ div {
     cursor: pointer;
   }
   .toggle-input:checked + .toggle-label{
-    background-color: $log-dark-pink;
+    background-color: $text-color-pink;
     color:white;
     padding:0 $switch-height 0 15px;
     &:after{
@@ -35,7 +35,7 @@ div {
     height: $switch-height;
     line-height:$switch-height;
     background: #cfd0cf;
-    color: darken(#cfd0cf, 30%);
+    color: darken(#cfd0cf, 80%);
     position: relative;
     display: inline-block;
     border-radius: 46px;
@@ -51,7 +51,7 @@ div {
       left: 0;
       top: 0;
       z-index: 2;
-      background: #fff;
+      background: white;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
       transition: 0.4s;
     }
