@@ -86,6 +86,10 @@ export class AppComponent implements OnInit {
   onReload() {
     location.reload();
   }
+
+  onDoorClick() {
+    window.open('https://github.com/renamoo/HelloSubjects/issues', '_blank');
+  }
 }
 
 const SUB_LOG = `const subscription
