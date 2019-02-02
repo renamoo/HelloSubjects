@@ -35,14 +35,41 @@
       display:flex;
       flex-direction:row;
       .tag{
-        width: calc(100% / 4);
+        flex-grow:1;
         text-align:center;
         cursor:pointer;
-        background:linear-gradient(180deg,white 90%, $button-stech 10%);
+        background:linear-gradient(180deg,white 90%, $text-color-pink 10%);
         color:$log-dark-pink;
         &.selected {
-          background:$button-stech;
+          background:$text-color-pink;
           color:white;
+        }
+      }
+    }
+    .doors{
+      position:absolute;
+      bottom:0;
+      right:20px;
+      .door{
+        background:white;
+        width:60px;
+        height:100px;
+        border-radius: 30px 30px 0 0;
+        text-align:center;
+        cursor:pointer;
+        position:relative;
+        >i{
+          margin:auto;
+          font-size:30px;
+          padding-top:20px;
+        }
+        .nob{
+          position:absolute;
+          background:$text-color-pink;
+          width:10px;
+          height:10px;
+          border-radius:50%;
+          left:45px;
         }
       }
     }
